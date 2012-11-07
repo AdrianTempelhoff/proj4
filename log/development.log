@@ -3,3 +3,561 @@
 Started GET "/assets/rails.png" for 127.0.0.1 at 2012-11-07 21:13:39 +0200
 Connecting to database specified by database.yml
 Served asset /rails.png - 200 OK (17ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (2.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mPRAGMA index_list("schema_migrations")[0m
+  [1m[35m (2.8ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20121107201820)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar(255), "password" varchar(255), "email" varchar(255), "user_group_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20121107201820')
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.0ms)[0m  PRAGMA index_list("users")
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (571.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (65.6ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36m (393.7ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (97.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.9ms)[0m  SHOW KEYS FROM `schema_migrations`
+  [1m[36m (242.0ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (244.8ms)[0m  [1mCREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `email` varchar(255), `user_group_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (9.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20121107201820')[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (35.7ms)[0m  [1mDROP TABLE `users`[0m
+  [1m[35m (68.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `email` varchar(255), `user_group_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (24.0ms)[0m  [1mDROP TABLE `users`[0m
+  [1m[35m (94.1ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `email` varchar(255), `user_group_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.4ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+Connecting to database specified by database.yml
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-07 22:55:55 +0200
+Connecting to database specified by database.yml
+Processing by UsersController#index as HTML
+  [1m[36m (1.5ms)[0m  [1mdescribe `users`[0m
+Completed 500 Internal Server Error in 13ms
+
+NoMethodError (undefined method `accept' for nil:NilClass):
+  app/controllers/users_controller.rb:5:in `index'
+
+
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.8ms)
+
+
+Started GET "/user_groups" for 127.0.0.1 at 2012-11-07 22:56:06 +0200
+Processing by UserGroupsController#index as HTML
+Completed 500 Internal Server Error in 2ms
+
+Mysql2::Error (Table 'proj4.user_groups' doesn't exist):
+  app/controllers/user_groups_controller.rb:5:in `index'
+
+
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-07 22:56:13 +0200
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `accept' for nil:NilClass):
+  app/controllers/users_controller.rb:5:in `index'
+
+
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-07 22:57:36 +0200
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `accept' for nil:NilClass):
+  app/controllers/users_controller.rb:5:in `index'
+
+
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.4ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (33.3ms)[0m  [1mDROP TABLE `users`[0m
+  [1m[35m (99.8ms)[0m  CREATE TABLE `users` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `username` varchar(255), `password` varchar(255), `email` varchar(255), `user_group_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (244.5ms)[0m  [1mCREATE TABLE `user_groups` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM `schema_migrations`
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-07 23:00:02 +0200
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `accept' for nil:NilClass):
+  app/controllers/users_controller.rb:5:in `index'
+
+
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.8ms)
+
+
+Started GET "/user_groups" for 127.0.0.1 at 2012-11-07 23:00:09 +0200
+Processing by UserGroupsController#index as HTML
+  [1m[35m (1.4ms)[0m  describe `user_groups`
+Completed 500 Internal Server Error in 4ms
+
+NoMethodError (undefined method `accept' for nil:NilClass):
+  app/controllers/user_groups_controller.rb:5:in `index'
+
+
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.7ms)
+
+
+Started GET "/user_groups" for 127.0.0.1 at 2012-11-07 23:02:21 +0200
+Processing by UserGroupsController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `accept' for nil:NilClass):
+  app/controllers/user_groups_controller.rb:5:in `index'
+
+
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-07 23:02:24 +0200
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `accept' for nil:NilClass):
+  app/controllers/users_controller.rb:5:in `index'
+
+
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-07 23:05:20 +0200
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 1ms
+
+NoMethodError (undefined method `accept' for nil:NilClass):
+  app/controllers/users_controller.rb:5:in `index'
+
+
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-07 23:06:56 +0200
+Connecting to database specified by database.yml
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` [0m
+  Rendered users/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 110ms (Views: 62.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-07 23:06:56 +0200
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/user_groups.css?body=1" for 127.0.0.1 at 2012-11-07 23:06:56 +0200
+Served asset /user_groups.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-07 23:06:56 +0200
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-11-07 23:06:56 +0200
+Served asset /users.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-07 23:06:56 +0200
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-07 23:06:56 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/user_groups.js?body=1" for 127.0.0.1 at 2012-11-07 23:06:56 +0200
+Served asset /user_groups.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-11-07 23:06:56 +0200
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-07 23:06:56 +0200
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2012-11-07 23:07:14 +0200
+Processing by UsersController#new as HTML
+  Rendered users/_form.html.erb (5.8ms)
+  Rendered users/new.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 17ms (Views: 11.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-07 23:07:15 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-07 23:07:15 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_groups.css?body=1" for 127.0.0.1 at 2012-11-07 23:07:15 +0200
+Served asset /user_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-07 23:07:15 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-11-07 23:07:15 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-07 23:07:15 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_groups.js?body=1" for 127.0.0.1 at 2012-11-07 23:07:15 +0200
+Served asset /user_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-11-07 23:07:15 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-07 23:07:15 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2012-11-07 23:07:30 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EJwtRMKO8tDxr/n3XBG0HQ/rkzKPaTRgGwQlfIQDIzg=", "user"=>{"username"=>"test", "password"=>"[FILTERED]", "email"=>"test@test.com", "user_group_id"=>"1"}, "commit"=>"Create User"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (23.9ms)[0m  [1mINSERT INTO `users` (`created_at`, `email`, `password`, `updated_at`, `user_group_id`, `username`) VALUES ('2012-11-07 21:07:30', 'test@test.com', 'test', '2012-11-07 21:07:30', 1, 'test')[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:4000/users/1
+Completed 302 Found in 30ms (ActiveRecord: 24.4ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at 2012-11-07 23:07:30 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 28ms (Views: 5.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-07 23:07:30 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-07 23:07:30 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-11-07 23:07:30 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_groups.css?body=1" for 127.0.0.1 at 2012-11-07 23:07:30 +0200
+Served asset /user_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-07 23:07:30 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-07 23:07:30 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_groups.js?body=1" for 127.0.0.1 at 2012-11-07 23:07:30 +0200
+Served asset /user_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-11-07 23:07:30 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-07 23:07:30 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/permissions" for 127.0.0.1 at 2012-11-07 23:10:15 +0200
+Processing by PermissionsController#index as HTML
+Mysql2::Error: Table 'proj4.permissions' doesn't exist: SHOW FULL FIELDS FROM `permissions`
+Completed 500 Internal Server Error in 6ms
+
+ActiveRecord::StatementInvalid (Mysql2::Error: Table 'proj4.permissions' doesn't exist: SHOW FULL FIELDS FROM `permissions`):
+  app/controllers/permissions_controller.rb:5:in `index'
+
+
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.6ms)
+  Rendered /Users/baraspara/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.2ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUsers (20121107201820)
+Migrating to CreateUserGroups (20121107204710)
+  [1m[35m (0.4ms)[0m  CREATE TABLE `user_groups` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Mysql2::Error: Table 'user_groups' already exists: CREATE TABLE `user_groups` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+Connecting to database specified by database.yml
+  [1m[36m (0.7ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateGroupPermissions (20121107210941)
+  [1m[35m (168.7ms)[0m  CREATE TABLE `group_permissions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_group_id` int(11), `permission_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121107210941')[0m
+Migrating to CreatePermissions (20121107211004)
+  [1m[35m (182.9ms)[0m  CREATE TABLE `permissions` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (8.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121107211004')[0m
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+
+
+Started GET "/permissions" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Processing by PermissionsController#index as HTML
+  [1m[35mPermission Load (0.3ms)[0m  SELECT `permissions`.* FROM `permissions` 
+  Rendered permissions/index.html.erb within layouts/application (1.3ms)
+Compiled group_permissions.css  (2ms)  (pid 14038)
+Compiled permissions.css  (0ms)  (pid 14038)
+Compiled application.css  (38ms)  (pid 14038)
+Compiled group_permissions.js  (87ms)  (pid 14038)
+Compiled permissions.js  (77ms)  (pid 14038)
+Compiled application.js  (181ms)  (pid 14038)
+Completed 200 OK in 272ms (Views: 266.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/assets/group_permissions.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /group_permissions.css - 200 OK (1ms)
+
+
+Started GET "/assets/permissions.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /permissions.css - 200 OK (1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /application.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/group_permissions.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /group_permissions.js - 200 OK (1ms)
+
+
+Started GET "/assets/permissions.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /permissions.js - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_groups.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /user_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_groups.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /user_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:15 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/permissions/new" for 127.0.0.1 at 2012-11-07 23:13:18 +0200
+Processing by PermissionsController#new as HTML
+  Rendered permissions/_form.html.erb (2.7ms)
+  Rendered permissions/new.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 13ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:18 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:18 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_groups.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:18 +0200
+Served asset /user_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:18 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:18 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:18 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:18 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_groups.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:18 +0200
+Served asset /user_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:18 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/permissions" for 127.0.0.1 at 2012-11-07 23:13:21 +0200
+Processing by PermissionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EJwtRMKO8tDxr/n3XBG0HQ/rkzKPaTRgGwQlfIQDIzg=", "permission"=>{"name"=>"test"}, "commit"=>"Create Permission"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (21.3ms)[0m  INSERT INTO `permissions` (`created_at`, `name`, `updated_at`) VALUES ('2012-11-07 21:13:21', 'test', '2012-11-07 21:13:21')
+  [1m[36m (0.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:4000/permissions/1
+Completed 302 Found in 25ms (ActiveRecord: 21.5ms)
+
+
+Started GET "/permissions/1" for 127.0.0.1 at 2012-11-07 23:13:21 +0200
+Processing by PermissionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPermission Load (0.3ms)[0m  SELECT `permissions`.* FROM `permissions` WHERE `permissions`.`id` = 1 LIMIT 1
+  Rendered permissions/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:21 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_groups.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:21 +0200
+Served asset /user_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:22 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:22 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:22 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:22 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_groups.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:22 +0200
+Served asset /user_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:22 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:22 +0200
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/permissions" for 127.0.0.1 at 2012-11-07 23:13:24 +0200
+Processing by PermissionsController#index as HTML
+  [1m[36mPermission Load (0.3ms)[0m  [1mSELECT `permissions`.* FROM `permissions` [0m
+  Rendered permissions/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:24 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:24 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_groups.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:24 +0200
+Served asset /user_groups.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-11-07 23:13:24 +0200
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:24 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:24 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/user_groups.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:24 +0200
+Served asset /user_groups.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:24 +0200
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:24 +0200
+Served asset /application.js - 304 Not Modified (0ms)
