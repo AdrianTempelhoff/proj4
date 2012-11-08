@@ -1,25 +1,20 @@
-<%= form_for(@invoice) do |f| %>
-  <% if @invoice.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
-
-      <ul>
-      <% @invoice.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @invoice, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :receipt_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :receipt_id, :class => 'number_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :purchase_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :purchase_id, :class => 'number_field' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :receipt_id %><br />
-    <%= f.number_field :receipt_id %>
-  </div>
-  <div class="field">
-    <%= f.label :purchase_id %><br />
-    <%= f.number_field :purchase_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                invoices_path, :class => 'btn' %>
   </div>
 <% end %>

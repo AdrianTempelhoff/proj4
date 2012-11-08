@@ -8,7 +8,47 @@
 </head>
 <body>
 
-<%= yield %>
+<div class="navbar navbar-inverse">
+  <div class="navbar-inner">
+    <div class="container">
+ 
+      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+ 
+      <!-- Be sure to leave the brand out there if you want it shown -->
+      <a class="brand" href="#">Proj4</a>
+  	 
+      <!-- Everything you want hidden at 940px or less, place within here -->
+      <div class="nav-collapse collapse">
+        <!-- .nav, .navbar-search, .navbar-form, etc -->
+      	<ul class="nav">
+          <li class="active"><a href="#">Home</a></li>
+          <li><a href="<%= users_path %>">Users</a></li>
+          <li><a href="<%= user_groups_path %>">User Groups</a></li>
+          <li><a href="<%= group_permissions_path %>">Group Permissions</a></li>
+          <li><a href="<%= permissions_path %>">Permissions</a></li>
+          <li><a href="<%= receipts_path %>">Receipts</a></li>
+          <li><a href="<%= invoices_path %>">Invoices</a></li>
+          <li><a href="<%= purchases_path %>">Purchases</a></li>
+          <li><a href="<%= baskets_path %>">Baskets</a></li>
+          <li><a href="<%= basket_items_path %>">Basket Items</a></li>
+          <li><a href="<%= items_path %>">Items</a></li>
+          <li><a href="<%= temp_baskets_path %>">Temp Baskets</a></li>
+          <li><a href="<%= temp_basket_items_path %>">Temp Basket Items</a></li>
+        </ul>
+      </div>
+ 
+    </div>
+  </div>
+</div>
+
+<div class="container">
+	<%= yield %>
+</div>
 
 </body>
 </html>
