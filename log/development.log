@@ -561,3 +561,40 @@ Served asset /users.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-11-07 23:13:24 +0200
 Served asset /application.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateGroupPermissions (20121107210941)
+Migrating to CreatePermissions (20121107211004)
+Migrating to CreateReceipts (20121108044539)
+  [1m[35m (103.8ms)[0m  CREATE TABLE `receipts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `invoice_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121108044539')[0m
+Migrating to CreateInvoices (20121108044642)
+  [1m[35m (277.9ms)[0m  CREATE TABLE `invoices` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `receipt_id` int(11), `purchase_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121108044642')[0m
+Migrating to CreatePurchases (20121108044736)
+  [1m[35m (143.0ms)[0m  CREATE TABLE `purchases` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `user_id` int(11), `invoice_id` int(11), `basket_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121108044736')[0m
+Migrating to CreateBaskets (20121108044849)
+  [1m[35m (81.6ms)[0m  CREATE TABLE `baskets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `temp_basket_id` int(11), `purchase_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121108044849')[0m
+Migrating to CreateBasketItems (20121108044945)
+  [1m[35m (143.4ms)[0m  CREATE TABLE `basket_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `basket_id` int(11), `item_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121108044945')[0m
+Migrating to CreateItems (20121108045013)
+  [1m[35m (104.1ms)[0m  CREATE TABLE `items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (11.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121108045013')[0m
+Migrating to CreateTempBaskets (20121108045220)
+  [1m[35m (127.6ms)[0m  CREATE TABLE `temp_baskets` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `basket_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121108045220')[0m
+Migrating to CreateTempBasketItems (20121108045413)
+  [1m[35m (131.6ms)[0m  CREATE TABLE `temp_basket_items` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `temp_basket_id` int(11), `item_id` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (8.1ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20121108045413')[0m
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 

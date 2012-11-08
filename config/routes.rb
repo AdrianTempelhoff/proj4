@@ -1,4 +1,20 @@
 Pos::Application.routes.draw do
+  resources :temp_basket_items
+
+  resources :temp_baskets
+
+  resources :items
+
+  resources :basket_items
+
+  resources :baskets
+
+  resources :purchases
+
+  resources :invoices
+
+  resources :receipts
+
   resources :permissions
 
   resources :group_permissions

@@ -1,0 +1,23 @@
+<h1>Listing temp_baskets</h1>
+
+<table>
+  <tr>
+    <th>Basket</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @temp_baskets.each do |temp_basket| %>
+  <tr>
+    <td><%= temp_basket.basket_id %></td>
+    <td><%= link_to 'Show', temp_basket %></td>
+    <td><%= link_to 'Edit', edit_temp_basket_path(temp_basket) %></td>
+    <td><%= link_to 'Destroy', temp_basket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Temp basket', new_temp_basket_path %>
